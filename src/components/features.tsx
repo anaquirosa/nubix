@@ -1,0 +1,20 @@
+import { features } from "../common/constants"
+import type { Feature } from "../types/type"
+
+export const Features = () => {
+  return (
+    <div className="grid grid-cols-1 gap-20 mt-[140px] md:grid-cols-2 max-w-[920px] mx-auto">
+        {
+            features.map(({title, description, iconURL} : Feature) => (
+                <div className="flex flex-col items-center text-center">
+                    <img src={iconURL} alt={title} />
+                    <div>
+                        <h3 className="font-bold mb-2 mt-8 font-Raleway">{title}</h3>
+                        <p>{description}</p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+  )
+}
